@@ -1,9 +1,14 @@
 import React from 'react'
+import NavBar from '../../components/NavBar/NavBar'
 
 const Home = () => {
   return (
-    <div>
-        This is home page
+    <div className="w-full py-7 px-10">
+        
+            <NavBar/>
+            
+
+        
     </div>
   )
 }
