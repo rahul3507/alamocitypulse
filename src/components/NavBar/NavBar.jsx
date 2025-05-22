@@ -39,11 +39,11 @@ const NavBar = () => {
                 <DialogTrigger asChild>
                   <Link className="border border-[#00254A] py-3 px-6 rounded-2xl text-base">Sign up</Link>
                 </DialogTrigger>
-                <DialogContent className="min-w-2/3 text-center items-center bg-transparent rounded-xl">
-                <div className='items-center mb-8'>
-                      <h1 className='text-white font-bold text-2xl md:text-4xl lg:text-5xl mb-3'>Sign Up or Sign In to Unlock More News</h1>
-                      <p className='text-white text-lg'>Create a free account or log in to access the latest updates, in-depth stories, and exclusive news tailored just for you</p>
-                </div>
+                <DialogContent className="min-w-2/3 border-none text-center items-center bg-transparent rounded-xl">
+                  <div className='items-center mb-8'>
+                        <h1 className='text-white font-bold text-2xl md:text-4xl lg:text-5xl mb-3'>Sign Up or Sign In to Unlock More News</h1>
+                        <p className='text-white text-lg'>Create a free account or log in to access the latest updates, in-depth stories, and exclusive news tailored just for you</p>
+                  </div>
                   <SignUp/>
                 </DialogContent>
               </Dialog>
