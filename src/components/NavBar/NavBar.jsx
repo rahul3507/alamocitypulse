@@ -1,22 +1,13 @@
-import { ChevronDown, Search } from 'lucide-react';
+import { ChevronDown, Search, User, X } from 'lucide-react';
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "../ui/dialog"; // ShadCN Dialog
-import { Button } from "../ui/button"; // ShadCN Button
-import { Input } from "../ui/input"; // ShadCN Input
-import { Label } from "../ui/label"; // ShadCN Label
-import { Checkbox } from "../ui/checkbox"; // ShadCN Checkbox
-import { useForm } from 'react-hook-form'; // React Hook Form
+import { Dialog, DialogContent,  DialogTrigger } from "../ui/dialog"; // Added DialogClose
+
+import SignUp from '../../Pages/Authentication/SignUp';
 
 const NavBar = () => {
   // React Hook Form setup
-  const { register, handleSubmit, formState: { errors } } = useForm();
-
-  // Handle form submission
-  const onSubmit = (data) => {
-    console.log("Form Data:", data);
-    // You can add your sign-up logic here (e.g., API call)
-  };
+ 
 
   return (
     <div>
@@ -48,97 +39,12 @@ const NavBar = () => {
                 <DialogTrigger asChild>
                   <Link className="border border-[#00254A] py-3 px-6 rounded-2xl text-base">Sign up</Link>
                 </DialogTrigger>
-                <DialogContent className="sm:max-w-[425px] rounded-xl">
-                  <DialogHeader>
-                    <DialogTitle className="text-2xl font-semibold">Sing Up Account</DialogTitle>
-                    <p className="text-sm text-gray-500">Don't have an Account? Sing Up Free</p>
-                  </DialogHeader>
-                  <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-                    <div className="grid grid-cols-2 gap-4">
-                      {/* First Name */}
-                      <div className="space-y-2">
-                        <Label htmlFor="firstName">First Name</Label>
-                        <Input
-                          id="firstName"
-                          placeholder="First name"
-                          {...register("firstName", { required: "First name is required" })}
-                        />
-                        {errors.firstName && <p className="text-red-500 text-xs">{errors.firstName.message}</p>}
-                      </div>
-                      {/* Last Name */}
-                      <div className="space-y-2">
-                        <Label htmlFor="lastName">Last Name</Label>
-                        <Input
-                          id="lastName"
-                          placeholder="Last name"
-                          {...register("lastName", { required: "Last name is required" })}
-                        />
-                        {errors.lastName && <p className="text-red-500 text-xs">{errors.lastName.message}</p>}
-                      </div>
-                    </div>
-                    {/* Email or Phone */}
-                    <div className="space-y-2">
-                      <Label htmlFor="emailOrPhone">E-mail or Phone</Label>
-                      <Input
-                        id="emailOrPhone"
-                        placeholder="Enter your E-mail or phone number"
-                        {...register("emailOrPhone", {
-                          required: "Email or phone is required",
-                          pattern: {
-                            value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/i,
-                            message: "Invalid email address",
-                          },
-                        })}
-                      />
-                      {errors.emailOrPhone && <p className="text-red-500 text-xs">{errors.emailOrPhone.message}</p>}
-                    </div>
-                    {/* Password */}
-                    <div className="space-y-2">
-                      <Label htmlFor="password">Password</Label>
-                      <Input
-                        id="password"
-                        type="password"
-                        placeholder="Enter your Password"
-                        {...register("password", {
-                          required: "Password is required",
-                          minLength: { value: 6, message: "Password must be at least 6 characters" },
-                        })}
-                      />
-                      {errors.password && <p className="text-red-500 text-xs">{errors.password.message}</p>}
-                    </div>
-                    {/* Terms & Conditions */}
-                    <div className="flex items-center space-x-2">
-                      <Checkbox
-                        id="terms"
-                        {...register("terms", { required: "You must agree to the terms" })}
-                      />
-                      <Label htmlFor="terms">I agree to the Terms & Conditions</Label>
-                    </div>
-                    {errors.terms && <p className="text-red-500 text-xs">{errors.terms.message}</p>}
-                    {/* Submit Button */}
-                    <Button type="submit" className="w-full bg-[#00254A] text-white hover:bg-[#003366]">
-                      Login
-                    </Button>
-                    {/* Social Sign-Up Options */}
-                    <div className="text-center text-sm text-gray-500">Or Sing Up with</div>
-                    <div className="flex gap-2">
-                      <Button variant="outline" className="w-full flex gap-2">
-                        <img src="https://www.google.com/favicon.ico" alt="Google" className="h-5 w-5" />
-                        Google
-                      </Button>
-                      <Button variant="outline" className="w-full flex gap-2">
-                        <img src="https://www.facebook.com/favicon.ico" alt="Facebook" className="h-5 w-5" />
-                        Facebook
-                      </Button>
-                    </div>
-                    {/* Sign In Link */}
-                    <div className="text-center text-sm">
-                      Already I have an account?{" "}
-                      <Link to="#" className="text-blue-600 hover:underline">
-                        Sign in
-                      </Link>
-                    </div>
-                  </form>
+                <DialogContent className="min-w-2/3 text-center items-center bg-transparent rounded-xl">
+                <div className='items-center mb-8'>
+                      <h1 className='text-white font-bold text-2xl md:text-4xl lg:text-5xl mb-3'>Sign Up or Sign In to Unlock More News</h1>
+                      <p className='text-white text-lg'>Create a free account or log in to access the latest updates, in-depth stories, and exclusive news tailored just for you</p>
+                </div>
+                  <SignUp/>
                 </DialogContent>
               </Dialog>
             </div>
