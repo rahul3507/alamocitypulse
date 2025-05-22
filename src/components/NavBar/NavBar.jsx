@@ -1,14 +1,11 @@
 import { ChevronDown, Search, User, X } from 'lucide-react';
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Dialog, DialogContent,  DialogTrigger } from "../ui/dialog"; // Added DialogClose
-
+import { Dialog, DialogContent, DialogTrigger } from "../ui/dialog";
 import SignUp from '../../Pages/Authentication/SignUp';
+import SignIn from '../../Pages/Authentication/SignIn';
 
 const NavBar = () => {
-  // React Hook Form setup
- 
-
   return (
     <div>
       <header className="w-full mb-3">
@@ -30,21 +27,30 @@ const NavBar = () => {
           <div className="col-span-2 items-center text-center">
             <h1 className="text-6xl justify-baseline font-bold text-primary">ALAMOCITYPULSE</h1>
           </div>
-
           <div className="col-span-1 flex flex-col items-end justify-center">
             <div className="flex gap-1">
-              <Link className="border py-3 px-6 rounded-2xl text-white text-base bg-[#00254A] mr-2">Sign in</Link>
-              {/* Dialog Trigger for Sign Up */}
+              <Dialog>
+                <DialogTrigger asChild>
+                  <Link className="border py-3 px-6 rounded-2xl text-white text-base bg-[#00254A] mr-2">Sign in</Link>
+                </DialogTrigger>
+                <DialogContent className="min-w-2/3 border-none text-center items-center bg-transparent rounded-xl">
+                  <div className='items-center mb-8'>
+                    <h1 className='text-white font-bold text-2xl md:text-4xl lg:text-5xl mb-3'>Sign Up or Sign In to Unlock More News</h1>
+                    <p className='text-white text-lg'>Create a free account or log in to access the latest updates, in-depth stories, and exclusive news tailored just for you</p>
+                  </div>
+                  <SignIn />
+                </DialogContent>
+              </Dialog>
               <Dialog>
                 <DialogTrigger asChild>
                   <Link className="border border-[#00254A] py-3 px-6 rounded-2xl text-base">Sign up</Link>
                 </DialogTrigger>
                 <DialogContent className="min-w-2/3 border-none text-center items-center bg-transparent rounded-xl">
                   <div className='items-center mb-8'>
-                        <h1 className='text-white font-bold text-2xl md:text-4xl lg:text-5xl mb-3'>Sign Up or Sign In to Unlock More News</h1>
-                        <p className='text-white text-lg'>Create a free account or log in to access the latest updates, in-depth stories, and exclusive news tailored just for you</p>
+                    <h1 className='text-white font-bold text-2xl md:text-4xl lg:text-5xl mb-3'>Sign Up or Sign In to Unlock More News</h1>
+                    <p className='text-white text-lg'>Create a free account or log in to access the latest updates, in-depth stories, and exclusive news tailored just for you</p>
                   </div>
-                  <SignUp/>
+                  <SignUp />
                 </DialogContent>
               </Dialog>
             </div>
@@ -56,8 +62,6 @@ const NavBar = () => {
           </div>
         </div>
       </header>
-
-      {/* Navigation */}
       <nav className="border-t text-primary border-[#e2e2e2] py-6">
         <ul className="flex gap-12 justify-center text-2xl space-x-12">
           <li>
