@@ -1,11 +1,13 @@
 import { ChevronDown, Search, User, X } from 'lucide-react';
-import React from 'react';
+
 import { Link } from 'react-router-dom';
 import { Dialog, DialogContent, DialogTrigger } from "../ui/dialog";
 import SignUp from '../../Pages/Authentication/SignUp';
 import SignIn from '../../Pages/Authentication/SignIn';
 
 const NavBar = () => {
+
+
   return (
     <div>
       <header className="w-full mb-3">
@@ -38,7 +40,7 @@ const NavBar = () => {
                     <h1 className='text-white font-bold text-2xl md:text-4xl lg:text-5xl mb-3'>Sign Up or Sign In to Unlock More News</h1>
                     <p className='text-white text-lg'>Create a free account or log in to access the latest updates, in-depth stories, and exclusive news tailored just for you</p>
                   </div>
-                  <SignIn />
+                  <SignIn  />
                 </DialogContent>
               </Dialog>
               <Dialog>
@@ -80,7 +82,7 @@ const NavBar = () => {
             </Link>
           </li>
           <li>
-            <Link href="#" className="hover:text-[#505050]">
+            <Link to="/dashboard" className="hover:text-[#505050]">
               Make Advertise
             </Link>
           </li>
