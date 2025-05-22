@@ -16,7 +16,7 @@ const Dashboard = () => {
                 </Link>
               </li>
               <li>
-                <Link href="#" className="block py-3 px-4 text-[#505050] hover:bg-[#e2e2e2]">
+                <Link to="/dashboard/advertise" className="block py-3 px-4 text-[#505050] hover:bg-[#e2e2e2]">
                   Advertise
                 </Link>
               </li>
