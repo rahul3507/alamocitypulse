@@ -10,17 +10,17 @@ const AdvertiseCard = ({ serialNumber, category, title, description }) => {
     <Card className="w-full  border rounded-md">
       <CardContent className="p-6">
         <div className="grid grid-cols-[1fr_2fr] gap-y-6">
-          <div className="font-medium text-lg">Serial Number</div>
-          <div className="text-lg">{serialNumber}</div>
+          <div className="font-medium text-xl text-primary">Serial Number</div>
+          <div className="text-xl text-secondary">{serialNumber}</div>
 
-          <div className="font-medium text-lg">Category</div>
-          <div className="text-lg">{category}</div>
+          <div className="font-medium text-xl text-primary">Category</div>
+          <div className="text-xl font-medium text-primary">{category}</div>
 
-          <div className="font-medium text-lg">Title</div>
-          <div className="text-lg">{title}</div>
+          <div className="font-medium text-xl text-primary">Title</div>
+          <div className="text-xl font-medium text-primary">{title}</div>
 
-          <div className="font-medium text-lg">Description</div>
-          <div className="text-lg text-gray-500">{description}</div>
+          <div className="font-medium text-xl text-primary">Description</div>
+          <div className="text-xl text-tertiary">{description}</div>
         </div>
       </CardContent>
     </Card>
