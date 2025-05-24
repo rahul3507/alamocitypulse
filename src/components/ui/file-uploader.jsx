@@ -68,8 +68,8 @@ export function FileUploader({ onFileChange }) {
           <div className="mb-4 text-gray-700">
             <UploadIcon className="h-10 w-10 mx-auto mb-2" />
           </div>
-          <p className="text-sm font-medium">Drag Your file or Browse</p>
-          <p className="text-xs text-gray-500 mt-1">Max file size 50MB</p>
+          <p className="text-lg text-secondary font-medium">Drag Your file or Browse</p>
+          <p className="text-lg text-tertiary  mt-1">Max file size 50MB</p>
         </>
       )}
     </div>

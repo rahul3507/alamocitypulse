@@ -88,7 +88,7 @@ const NavBar = () => {
           </li>
         </ul>
       </nav>
-      <div className="py-0.5 border-t border-b border-primary"></div>
+      <div className="py-0.5 border-t border-b  border-secondary"></div>
     </div>
   );
 };
